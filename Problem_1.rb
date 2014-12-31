@@ -10,9 +10,9 @@ sum = 0
         multiples_a << i
     end
     }
-    
+
 multiples_a.each { |n|
     sum += n
-    } 
+    }
 
 puts sum
