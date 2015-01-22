@@ -4,7 +4,7 @@
 
 
 # To solve this problem user Sieve of Eratosthenes.
-# The basis is to go through min-limit numbers and eliminating incremental values.
+# The basis is to go through min through limit numbers and eliminating incremental values.
 
 max = 2000000  # Set maximum number here
 min = 2 	   # Set minimum search number here
