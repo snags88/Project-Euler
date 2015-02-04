@@ -8,6 +8,35 @@ Evaluate the sum of all the amicable numbers under 10000.
 =end
 
 def divisors(value)
-  div_a =[]
-  divisor = 1
-  while divisor < value
+  div_a =[1]
+  divisor = 2
+
+  while divisor < Math.sqrt(value)
+    if value % divisor == 0
+      div_a << divisor
+      div_a << (value / divisor)
+    end
+    divisor += 1
+  end
+  div_a.sort
+end
+
+def sum_array_values(arr)
+  arr.inject{|sum, n| sum + n }
+end
+
+def amicable?(value)
+  value == sum_array_values(divisors(sum_array_values(divisors(value)))) && value != sum_array_values(divisors(value)) ? true : false
+end
+
+amicable_nums = []
+
+
+for i in 1..10000
+  if amicable_nums.count(i) == 0
+    amicable_nums << i if amicable?(i)
+  end
+end
+
+#puts amicable_nums
+puts sum_array_values(amicable_nums)
